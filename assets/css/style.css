@@ -1,0 +1,36 @@
+* {
+    margin: 0px;
+}
+
+
+.nav{
+    background-color: aqua;
+    height: 10vh;
+    width: 100%;
+}
+
+.main{
+    background-color: rgb(236, 235, 145);
+    min-height: 85vh;
+    width: 100%;
+}
+.images{
+    width: 75%;
+    background-color: rgba(123, 123, 218, 0.288);
+    min-height: 85vh;
+    float: left;
+}
+
+.feed{
+    width: 25%;
+    background-color: rgba(171, 224, 118, 0.247);
+    min-height: 85vh;
+    float: left;
+}
+
+
+.footer{
+    background-color: aqua;
+    height: 5vh;
+    width: 100%;
+}
