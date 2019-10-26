@@ -12,18 +12,18 @@ $(document).ready(function () {
 
     $('.startMenu').on('click', '.btn2', function () {
         console.log(topics)
-
+        console.log($(this).attr('value'));
         $.ajax({
             method: "GET",
             url: 'https://api.giphy.com/v1/gifs/search?api_key=' + ApiKey + '&q=dogs&limit=10&offset=0&rating=G&lang=en',
             dataType: 'json'
         }).then(data => {
             console.log(data)
-            if (btn2.value === 'dogs') {
-                $('.images').append(`<img class="gif_image" src="https://api.giphy.com/v1/gifs/search?api_key=gc9EzgySz6PJZbjrG9UIESkEs843Crby&q=dogs&limit=10&offset=0&rating=G&lang=en"/>`);
+            if ($(this).attr('value') === 'dogs') {
+                $('.images').append(`<img class="gif_image" src="https://media0.giphy.com/media/Q9GYuPJTT8RomJTRot/giphy.webp?cid=790b7611ae06ed2c07682691550bb440d59aa7572cda864b&rid=giphy.webp"/>`);
+            } else {
+                console.log("not not not")
             }
-            console.log("not not not")
-
         })
 
     })
@@ -37,7 +37,7 @@ $(document).ready(function () {
         //  for loop to go through the array and creat a button to each string.
         for (let i = 0; i < userTopics.length; i++) {
             let buttons2 = $('<button>' + userTopics[i] + '</button>').addClass('btn2').attr('Value', userTopics[i])
-            buttons2.appendTo('.startMenu');
+            $('.startMenu').append(buttons2)
         }
 
         // function to prevent mutli entries of each string.
