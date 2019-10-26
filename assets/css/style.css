@@ -15,6 +15,13 @@ h1{
     text-align: center;
 }
 
+.gif_image{
+    height: 200px;
+    width: 200px;
+    
+    
+}
+
 .main{
     background-color: rgb(236, 235, 145);
     min-height: 85vh;
@@ -27,17 +34,14 @@ h1{
     min-height: 7.5vh;
 }
 
-.userMenu{
-    background-color: rgb(212, 149, 14);
-    width: 100%;
-    min-height: 7.5vh;
-}
+
 
 .images{
     width: 75%;
-    background-color: rgba(123, 123, 218, 0.288);
-    min-height: 70vh;
+    background-color: rgba(10, 10, 226, 0.288);
+    min-height: 77.5vh;
     float: left;
+    
 }
 
 .feed{
