@@ -52,16 +52,16 @@ $(document).ready(function () {
             for (x = 0; x < imgresult.length; x++) {
                 let imgurl = data.data[x].images.original.url
                 let imgstill = data.data[x].images["480w_still"].url
-                $('.images').append(`<img class="gif_image" id="gif_${[x]}" data-still="${imgstill}"  data-animate="${imgurl} "src="${imgstill}"/>`);
+                $('.images').append(`<img class="gif_image" id="gif_${[x]}" data-still="${imgstill}"  data-animate="${imgurl} "src="${imgstill}" data-state="still"/>`);
 
                 // image on-click function that switch image from still to animate
                 $(document).on('click', '#gif_' + [x], function () {
-                    if ($(this).attr('data-state') == 'animate') {
+                    if ($(this).attr('data-state') == 'still') {
                         $(this).attr('src', $(this).attr("data-animate"));
-                        $(this).attr('data-state', 'still');
+                        $(this).attr('data-state', 'animate');
                     } else {
                         $(this).attr('src', $(this).attr("data-still"));
-                        $(this).attr('data-state', 'animate');
+                        $(this).attr('data-state', 'still');
                     }
                 })
             }
