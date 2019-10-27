@@ -1,18 +1,50 @@
 * {
     margin: 0px;
 }
+body{
+    background-color: rgba(161, 158, 158, 0.657);
+}
+p {
 
+    font-family: sans-serif;
+    letter-spacing: 4px;
+    overflow: hidden;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 5s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+    0% {
+    background-position: -500%;
+    }
+    100% {
+    background-position: 500%;
+    }
+}
 
 .navbar{
+    text-transform: uppercase;
     background-color: aqua;
-    height: 10vh;
+    height: 6.75vh;
     width: 100%;
     text-align: center;
     vertical-align: middle;
+    background-image: url('http://giphygifs.s3.amazonaws.com/media/GC7C2Fi902BDG/giphy.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: thistle;
 }
 
-h1{
+p{
     text-align: center;
+    font-size: 42px;
+    vertical-align: middle;
+    padding-bottom: 10px;
+    
 }
 
 .gif_image{
@@ -21,8 +53,6 @@ h1{
     margin: 50px;
     border-radius: 10%;
     box-shadow: 10px 10px 10px 10px rgba(128, 128, 128, 0.445);
-    
-    
 }
 
 .gif_image:hover{
@@ -35,7 +65,6 @@ h1{
 }   
 
 .main{
-    /* background-color: rgb(236, 235, 145); */
     min-height: 85vh;
     width: 100%;
 }
@@ -47,11 +76,8 @@ h1{
 }
 
 
-
 .images{
-    
     width: 75%;
-    /* background-color: rgba(10, 10, 226, 0.288); */
     min-height: 77.5vh;
     float: left;
     
@@ -59,9 +85,26 @@ h1{
 
 .feed{
     width: 25%;
-    /* background-color: rgba(171, 224, 118, 0.247); */
     min-height: 70vh;
     float: left;
+}
+
+#counter{
+    height: 50px;
+    margin-left: 35%;
+    margin-right: 35%;
+    width: 30%;
+    font-weight: bold;
+    font-size: 48px;
+    
+    text-align: center;
+
+}
+#para{
+    color: tomato;
+    font-size: 32px;
+    margin-top: 20px;
+    background-color: springgreen;
 }
 
 #input{
@@ -76,12 +119,18 @@ button{
     height: 50px;
     margin: 10px;
     min-width: 150px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+button:hover{
+    background-color: rgb(44, 43, 43);
+    color: white   ;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .btn{
-    float: center;
-    align-content: center;
-    align-items: center;
     margin-top: 4vh;
     width: 60%;
     height: 5vh;
@@ -89,6 +138,7 @@ button{
     margin-right: 20%;
     text-align: center;
     font-size: 24px;
+    font-weight: bold;
 }
 
 

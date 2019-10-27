@@ -11,10 +11,18 @@ $(document).ready(function () {
     //  on click function to generate buttons.
     $('.btn').on('click', function () {
         let userTopics = [];
-        const userInput = $('#input').val();
-        $('#input').val('');
+        let userInput = [];
 
-        userTopics.push(userInput);
+        // function to prevent empty entries.
+        if ($('#input').val() === '') {
+            alert('Please type an animale name')
+            // console.log('hello')
+        } else {
+            userInput = $('#input').val();
+            // console.log('hopla')
+            $('#input').val('');
+            userTopics.push(userInput);
+        }
 
         //  for loop to go through the array and creat a button to each string.
         for (let i = 0; i < userTopics.length; i++) {
@@ -27,15 +35,15 @@ $(document).ready(function () {
     });
 
     // on click function for topics buttons
-
     $('.startMenu').on('click', '.btn2', function () {
         $('.images').empty();
         // console.log(topics)
         // console.log($(this).attr('value'));
+        let imageCount = $('#counter').val();
 
         $.ajax({
             method: "GET",
-            url: 'https://api.giphy.com/v1/gifs/search?api_key=gc9EzgySz6PJZbjrG9UIESkEs843Crby&q=' + $(this).attr('value') + '&limit=9&offset=0&rating=G&lang=en',
+            url: 'https://api.giphy.com/v1/gifs/search?api_key=gc9EzgySz6PJZbjrG9UIESkEs843Crby&q=' + $(this).attr('value') + '&limit=' + imageCount + '&offset=0&rating=G&lang=en',
             dataType: 'json'
         }).then(data => {
             // console.log(data)
