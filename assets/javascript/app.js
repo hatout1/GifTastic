@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let topics = ['dogs', 'cats', 'rabbit', 'goldfish']
+    let topics = ['Dogs', 'Cats', 'Rabbits', 'Goldfish', 'Shark', 'Frogs']
     const ApiKey = 'gc9EzgySz6PJZbjrG9UIESkEs843Crby';
     // var imgurl;
 
@@ -29,12 +29,13 @@ $(document).ready(function () {
     // on click function for topics buttons
 
     $('.startMenu').on('click', '.btn2', function () {
+        $('.images').empty();
         // console.log(topics)
         // console.log($(this).attr('value'));
 
         $.ajax({
             method: "GET",
-            url: 'https://api.giphy.com/v1/gifs/search?api_key=gc9EzgySz6PJZbjrG9UIESkEs843Crby&q=' + $(this).attr('value') + '&limit=10&offset=0&rating=G&lang=en',
+            url: 'https://api.giphy.com/v1/gifs/search?api_key=gc9EzgySz6PJZbjrG9UIESkEs843Crby&q=' + $(this).attr('value') + '&limit=9&offset=0&rating=G&lang=en',
             dataType: 'json'
         }).then(data => {
             // console.log(data)
@@ -43,19 +44,20 @@ $(document).ready(function () {
             for (x = 0; x < imgresult.length; x++) {
                 let imgurl = data.data[x].images.original.url
                 let imgstill = data.data[x].images["480w_still"].url
-                $('.images').append(`<img class="gif_image" id="gif_${[x]}" data-still="${imgstill}"  data-animate="${imgurl} "src="${imgurl}"/>`);
+                $('.images').append(`<img class="gif_image" id="gif_${[x]}" data-still="${imgstill}"  data-animate="${imgurl} "src="${imgstill}"/>`);
 
                 // image on-click function that switch image from still to animate
                 $(document).on('click', '#gif_' + [x], function () {
-                    if ($(this).attr('data-state') == 'still') {
+                    if ($(this).attr('data-state') == 'animate') {
                         $(this).attr('src', $(this).attr("data-animate"));
-                        $(this).attr('data-state', 'animate');
+                        $(this).attr('data-state', 'still');
                     } else {
                         $(this).attr('src', $(this).attr("data-still"));
-                        $(this).attr('data-state', 'still');
+                        $(this).attr('data-state', 'animate');
                     }
                 })
             }
+
         })
     })
 });

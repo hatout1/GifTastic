@@ -16,20 +16,32 @@ h1{
 }
 
 .gif_image{
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
+    margin: 50px;
+    border-radius: 10%;
+    box-shadow: 10px 10px 10px 10px rgba(128, 128, 128, 0.445);
     
     
 }
 
+.gif_image:hover{
+
+    height: 400px;
+    width: 400px;
+    margin: 10px;
+    border-radius: 5%;
+    box-shadow: 10px 10px 10px 10px rgba(169, 236, 45, 0.445);
+}   
+
 .main{
-    background-color: rgb(236, 235, 145);
+    /* background-color: rgb(236, 235, 145); */
     min-height: 85vh;
     width: 100%;
 }
 
 .startMenu{
-    background-color: chartreuse;
+    background-color: chartreuse, 5%, 5%, 0, 0;
     width: 100%;
     min-height: 7.5vh;
 }
@@ -37,8 +49,9 @@ h1{
 
 
 .images{
+    
     width: 75%;
-    background-color: rgba(10, 10, 226, 0.288);
+    /* background-color: rgba(10, 10, 226, 0.288); */
     min-height: 77.5vh;
     float: left;
     
@@ -46,7 +59,7 @@ h1{
 
 .feed{
     width: 25%;
-    background-color: rgba(171, 224, 118, 0.247);
+    /* background-color: rgba(171, 224, 118, 0.247); */
     min-height: 70vh;
     float: left;
 }
@@ -66,6 +79,9 @@ button{
 }
 
 .btn{
+    float: center;
+    align-content: center;
+    align-items: center;
     margin-top: 4vh;
     width: 60%;
     height: 5vh;
